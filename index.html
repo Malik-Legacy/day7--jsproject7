@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            background-color: skyblue;
+            border-radius: 15px;
+            width: 90%;
+            text-align: center;
+
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Find your salary</h1>
+        <select  id="smf">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <input type="number" id="sa" placeholder="select years of service">
+        <select  id="sd">
+            <option>Post</option>
+            <option>Graduate</option>
+        </select><br><br>
+        <button id="b" onclick="cal()">Calculate</button><br><br>
+   <h1 id="o"></h1><br><br>
+    </div>
+<script>
+    function cal(){
+    var gen = document.getElementById("smf").value
+    var ys  = parseInt(document.getElementById("sa").value)
+    var deg = document.getElementById("sd").value
+console.log(gen)
+
+
+
+if(gen == "Male" && ys >=10 && deg == "Post" ){
+document.getElementById("o").innerHTML="salary = 15000";
+}
+else if(gen == "Male" && ys < 10 && deg == "Post"   ){
+    document.getElementById("o").innerHTML="salary = 10000";
+}
+else if(gen == "Male" && ys >= 10 && deg == "Graduate"   ){
+    document.getElementById("o").innerHTML="salary = 10000";
+}
+else if(gen == "Male" && ys < 10 && deg == "Graduate"   ){
+    document.getElementById("o").innerHTML="salary = 7000";
+}
+
+// female 
+if(gen == "Female" && ys >=10 && deg == "Post"   ){
+    document.getElementById("o").innerHTML="salary = 12000";
+}
+else if(gen == "Female" && ys >= 10 && deg == "Graduate"   ){
+    document.getElementById("o").innerHTML="salary = 9000";
+}
+else if(gen == "Female" && ys < 10 && deg == "Post"   ){
+    document.getElementById("o").innerHTML="salary = 10000";
+}
+else if(gen == "Female" && ys < 10 && deg == "Graduate"   ){
+    document.getElementById("o").innerHTML="salary = 6000";
+}
+}
+
+</script>
+</body>
+</html>
